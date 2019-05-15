@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Todo example written in js</title>
+</head>
+
+<body>
+
+    <form id="todoForm">
+        <input id="todoInput" type="text">
+        <button type="button" id="button">Add your To Do</button>
+    </form>
+    <ul id="toDoList"></ul>
+
+    <script>
+        var todos = [];
+        document.getElementById('button').addEventListener('click', function () {
+            var todoInput = document.getElementById('todoInput').value;
+            if(todoInput.length > 0) {
+                todoInput = todoInput.trim();
+
+            }
+            if (todoInput === '') {
+                alert("Listeye birşeyler eklemelisin!");
+                return;
+            } 
+                todos.push(todoInput)
+          
+            var item = document.createElement("li");
+
+            var list = document.getElementById('toDoList');
+
+            var li = document.createElement("li");
+            li.appendChild(document.createTextNode(todoInput));
+            list.append(li);
+        });
+
+    </script>
+
+</body>
+
+</html>
